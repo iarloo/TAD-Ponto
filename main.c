@@ -12,7 +12,7 @@ int main()
 
     while(funcaoDesejada < 5 && funcaoDesejada > 0){
         printf("Operações:\n");
-        printf("Numero Máximo de pontos : %d\n", MAX_PONTOS);
+        printf("Numero Máximo de pontos : %d\n", MAX_PONTOS - numPontos1);
         printf("1 - Criar Ponto\n");
         printf("2 - Libera Ponto\n");
         printf("3 - Acessa Ponto\n");
@@ -22,9 +22,9 @@ int main()
         //Recolhe a função desejada do usuario;
         scanf("%d", &funcaoDesejada);
         limpaTela();
-        system("clear");
         switch(funcaoDesejada){
             case 1:
+                limpaTela();
                 float x,y;
                 printf("1 - Criar Ponto\n");
                 printf("Digite as coordenadas de seu ponto\n");
@@ -36,14 +36,15 @@ int main()
                     printf("Ponto %d criado: (%.1f, %.1f)\n", numPontos + 1, x, y);
                     numPontos++;
                 }else{
-                    printf("Numero maximo de pontos atingido, será criados novos pontos uma vez que algum ponto pré existente é liberado.");
+                    printf("Numero maximo de pontos atingido, será criados novos pontos uma vez que algum ponto pré existente é liberado.\n");
                 }
                 break;
 
             case 2:
                 if (numPontos > 0) {
                     int indice;
-                    printf("Digite o indice do a  ser liberado ( 1 a %d)", numPontos);
+                    printf("Digite o indice do a ser liberado ( 1 a %d)\n", numPontos);
+
 
                 }
 

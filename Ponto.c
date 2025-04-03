@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <math.h>
+#include <stdio.h>
 #include "Ponto.h" //inclui os prototipos
 
 struct ponto{      //definiçao do tipo de dado
@@ -44,6 +45,7 @@ float Ponto_distancia(Ponto* p1, Ponto* p2){
     return sqrt(dx * dx + dy * dy);
 }
 
-void limpaTela(){
-    system("clear");
+void limpaTela() {
+    printf("\n\n\n\n\n\n\n\n");
+
 }

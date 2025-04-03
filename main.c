@@ -79,7 +79,7 @@ int main()
                 break;
 
             case 3:
-                printf("Eu n tenho ideia do q fazer aq kkkkkk");
+                Ponto_lista(numPontos, pontos, -1);
                 break;
 
             case 4:

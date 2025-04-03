@@ -19,6 +19,7 @@
     //Calcula a distancia entre dois pontos
     float Ponto_distancia(Ponto* p1, Ponto* p2);
 
-    void limpaTela();
+    void Ponto_lista(int numPontos, Ponto **pontos, int exception);
+
 
 #endif //PONTO_H

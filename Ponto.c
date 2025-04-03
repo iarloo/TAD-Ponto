@@ -11,7 +11,7 @@ struct ponto{      //definiçao do tipo de dado
 Ponto* Ponto_cria(float x, float y){
     Ponto* p = (Ponto*) malloc(sizeof(Ponto));
     if (p != NULL){
-        p->x - x;
+        p->x = x;
         p->y = y;
     }
     return p;
@@ -21,7 +21,7 @@ void Ponto_libera(Ponto* p){
     free(p);
 }
 
-int Ponto_acessa(Ponto* p,  float* x, float* y){
+int Ponto_acessa(Ponto* p, float* x, float* y){
     if(p == NULL)
         return 0;
     *x = p->x;
@@ -30,8 +30,9 @@ int Ponto_acessa(Ponto* p,  float* x, float* y){
 }
 
 int Ponto_atribui(Ponto* p, float x, float y){
-    if(p == NULL);
-    return 0;
+    if(p == NULL) {
+        return 0;
+    }
     p->x = x;
     p->y = y;
     return 1;
@@ -45,7 +46,13 @@ float Ponto_distancia(Ponto* p1, Ponto* p2){
     return sqrt(dx * dx + dy * dy);
 }
 
-void limpaTela() {
-    printf("\n\n\n\n\n\n\n\n");
-
+void Ponto_lista(int numPontos, Ponto **pontos, int exception){
+    //-1 para nenhuma exceção
+    float xt,yt;
+    for (int i = 0; i < numPontos; i++) {
+        if (i != exception) {
+            Ponto_acessa(pontos[i],&xt,&yt);
+            printf("Ponto %d - (%.2f,%.2f)\n", i, xt, yt);
+        }
+    }
 }

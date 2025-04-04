@@ -8,12 +8,11 @@ int main()
     ///Variaveis Principais
     int funcaoDesejada = 1;
     Ponto *pontos[MAX_PONTOS]; // vetor pra guardar os pontos
-    int numPontos = 0; //indicador  de quantos pontos eu ja tenho
+    int numPontos = 0; //indicador de quantos pontos eu ja existem
     int indiceValido = 0; //Flag para dizer se o indice fornecido foi digitado corretamente.
 
 
-    while(funcaoDesejada < 6 && funcaoDesejada > 0){
-        printf("\nOperações:\n");
+    while(funcaoDesejada < 6 && funcaoDesejada > 0){ //Definir limite de opções
         printf("Numero Máximo de pontos : %d\n", MAX_PONTOS - numPontos);
         printf("1 - Criar Ponto\n");
         printf("2 - Libera Ponto\n");
@@ -30,12 +29,12 @@ int main()
             case 1:
                 //limpaTela();
                 float x,y;
-                printf("1 - Criar Ponto\n");
+                printf("\n1 - Criar Ponto\n");
 
                 if(numPontos < MAX_PONTOS){
 
                     printf("Digite as coordenadas de seu ponto\n");
-                    printf("Digite o valor x  :"); scanf("%f", &x);
+                    printf("Digite o valor x :"); scanf("%f", &x);
                     printf("Digite o valor y :"); scanf("%f", &y);
 
                     pontos[numPontos] = Ponto_cria(x,y);
@@ -47,6 +46,7 @@ int main()
                 break;
 
             case 2:
+                indiceValido = 0;
                 while(indiceValido == 0) { //Programa entra em loop se o indice foi digitado incorretamente.
                     if (numPontos > 0) {
                         int indice;
@@ -108,7 +108,7 @@ int main()
                         }
                     }
                 }else {
-                    printf("Não há pontos para serem atribuidos novos valores./n");
+                    printf("Não há pontos para serem atribuidos novos valores.\n");
                 }
                 break;
 
